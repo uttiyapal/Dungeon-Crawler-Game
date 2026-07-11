@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="DangerousDaveRemake"
-run/main_scene="uid://dfo0o4s1esjkc"
+config/name="DungeonCrawler"
+run/main_scene="uid://bvt2alnv8krhg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

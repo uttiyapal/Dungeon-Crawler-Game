@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bvt2alnv8krhg"]
+
+[ext_resource type="Script" uid="uid://v4h03bm5syfb" path="res://scripts/ui/main_menu.gd" id="1_wlpbi"]
+[ext_resource type="FontFile" uid="uid://b8dpjmdeio5fa" path="res://assets/fonts/ModernDOS8x16.ttf" id="2_bqojv"]
+
+[node name="MainMenu" type="Control" unique_id=1080318438]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wlpbi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1960571221]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09803922, 0.09803922, 0.15686275, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2046955036]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -64.0
+offset_right = 97.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=2070319460]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9019608, 0.3529412, 1)
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 64
+text = "/ --------------------- \\
+|     DUNGEON CRAWLER     |
+\\ --------------------- /"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=953807146]
+custom_minimum_size = Vector2(350, 55)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 25
+text = "[ Start Game ]"
+
+[node name="HowToButton" type="Button" parent="VBoxContainer" unique_id=99182559]
+custom_minimum_size = Vector2(350, 55)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 25
+text = "[ How To Play ]"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=989868265]
+custom_minimum_size = Vector2(350, 55)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 25
+text = "[ Quit ]"
+
+[node name="HowToPanel" type="Panel" parent="." unique_id=414223189]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HowToPanel" unique_id=1732602749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPanel/MarginContainer" unique_id=1019618474]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="HowToPanel/MarginContainer/VBoxContainer" unique_id=919519118]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 50
+text = "[ HOW TO PLAY ]
+_____________________________________________"
+
+[node name="Instructions" type="Label" parent="HowToPanel/MarginContainer/VBoxContainer" unique_id=2059622874]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 20
+text = "
+Move: W / A / S /  D
+
+Jump: Space
+
+Shoot: Left Mouse Button
+
+Jetpack: Left Ctrl (Hold)
+
+Objective:
+• Collect gems,coins for points.
+• Pick up the key to unlock the exit.
+• Find the gun to defeat monsters.
+• Find the jetpack to reach difficult areas.
+• Avoid monsters, fire and lava.
+• Reach the exit door to complete each level.
+"
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="HowToPanel/MarginContainer/VBoxContainer" unique_id=1755944739]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqojv")
+theme_override_font_sizes/font_size = 25
+text = "[ BACK ]"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HowToButton" to="." method="_on_how_to_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HowToPanel/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
