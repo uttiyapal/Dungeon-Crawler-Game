@@ -48,11 +48,6 @@ A dungeon crawler game paying homage to the MS-DOS games (VGA Graphics) of the 9
   <img src="img/pic2.png" alt="Gameplay Screenshot 2" width="30%">
   <img src="img/pic3.png" alt="Gameplay Screenshot 3" width="30%">
 </p>
-<p align="center">
-  <img src="img/pic4.png" alt="Gameplay Screenshot 4" width="30%">
-  <img src="img/pic5.png" alt="Gameplay Screenshot 5" width="30%">
-  <img src="img/pic6.png" alt="Gameplay Screenshot 6" width="30%">
-</p>
 
 ---
 
