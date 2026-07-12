@@ -8,6 +8,7 @@ extends Node
 @onready var game_complete = $GameComplete
 @onready var game_over = $GameOver
 @onready var pause_menu = $PauseMenu
+@onready var transition_anim = $TransitionLayer/AnimationPlayer
 
 var current_level_instance : Node = null
 
@@ -28,7 +29,7 @@ func _ready():
 	load_level(levels[current_level_index])
 
 func load_level(scene_path: String):
-	
+	await fade_out()
 	GameManager.has_key = false
 	GameManager.has_gun = false
 	GameManager.has_jetpack = false
@@ -56,6 +57,15 @@ func load_level(scene_path: String):
 		top_left.global_position,
 		bottom_right.global_position
 	)
+	await fade_in()
+
+func fade_out():
+	transition_anim.play("FadeOut")
+	await transition_anim.animation_finished
+
+func fade_in():
+	transition_anim.play("FadeIn")
+	await transition_anim.animation_finished
 
 func _on_level_completed() -> void:
 	current_level_index += 1
