@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cjklxlr0ncc5c" path="res://scenes/collectibles/Ruby.tscn" id="20_wpber"]
 [ext_resource type="PackedScene" uid="uid://bnbalavu6r75y" path="res://scenes/collectibles/Heart.tscn" id="21_os03k"]
 [ext_resource type="PackedScene" uid="uid://ys2oxsjgvpar" path="res://scenes/collectibles/Emerald.tscn" id="22_whv4a"]
+[ext_resource type="PackedScene" uid="uid://bk6hsifbvsy4j" path="res://scenes/objects/SignBoard.tscn" id="26_os03k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn34c"]
 texture = ExtResource("14_wpber")
@@ -23862,6 +23863,10 @@ position = Vector2(1061, 679)
 
 [node name="Gun" parent="Entities" unique_id=1994237845 instance=ExtResource("10_fogwp")]
 position = Vector2(514, 664)
+
+[node name="SignBoard" parent="Entities" unique_id=1567757057 instance=ExtResource("26_os03k")]
+position = Vector2(145, 665)
+message = "Press LMB to shoot Gun"
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=497194717]
 

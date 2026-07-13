@@ -43,3 +43,7 @@ func show_message(text: String, duration: float = 2.0):
 
 	if this_id == message_id:
 		message_label.visible = false
+
+func hide_message():
+	message_id += 1  # invalidates any pending auto-hide timer
+	message_label.visible = false

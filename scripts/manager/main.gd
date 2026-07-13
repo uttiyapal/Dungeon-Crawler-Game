@@ -19,7 +19,7 @@ var current_level_instance : Node = null
 #]
 
 var levels = [
-	"res://scenes/levels/level03.tscn"
+	"res://scenes/levels/level01.tscn"
 ]
 
 var current_level_index = 0
@@ -106,3 +106,6 @@ func _on_game_over():
 
 func show_message(text: String, duration: float = 2.0):
 	hud.show_message(text, duration)
+
+func hide_message():
+	hud.hide_message()
